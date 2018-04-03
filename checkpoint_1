@@ -1,0 +1,37 @@
+- remove duplicates in a query response
+
+	SQL: SELECT DISTINCT title FROM post;
+	pseudocode: title = Post.title.unique
+
+- filter records using inequalities, pattern matching, ranges, and boolean logic
+
+	SQL: SELECT name FROM user WHERE email NOT EXISTS;
+	pseudocode: name = User.name.email?(null)
+
+- sort records in a particular order
+
+	SQL: SELECT email, name FROM user ORDER BY name DESC;
+	pseudocode: email = User.email.name.sort_by_desc
+
+- limit the number of records returned
+
+	SQL: SELECT title FROM post ORDER BY title ASC LIMIT 1;
+	pseudocode: title = Post.title.sort_by_asc[1]
+
+- group records into sections
+
+	SQL: SELECT body FROM comment GROUP BY user_id;
+	pseudocode: body = Comment.body.group_by_user_id
+
+- perform calculations using aggregate functions
+
+	SQL: SELECT COUNT(name) FROM user;
+	pseudocode: names = User.name.row_count
+
+- join tables using cross join, inner join, and outer join
+
+	SQL: SELECT comment.body, post.title FROM comment INNER JOIN post ON comment.post_id = post.id;
+	pseudocode: comment.body AND post.title = Comment.body.UNION.Post.title
+
+
+For each of these skills, write pseudo-code (like the post = Post.all.first example above) to demonstrate how your application might perform these tasks through an ORM. For each code sample, also write a corresponding SQL statement. Send the code samples and SQL statements to your mentor.
